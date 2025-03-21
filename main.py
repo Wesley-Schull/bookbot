@@ -1,5 +1,8 @@
 # BookBot, the first of the Boot.Dev projects!
 
+from stats import count_words, count_characters
+
+
 def get_book_text(file_path):
     file_text = "No file found."
     
@@ -12,15 +15,10 @@ def get_book_text(file_path):
     return file_text
 
 
-def count_words(input_text):
-    words = input_text.split()
-    
-    return len(words)
-
-
 def main():
     frankenstein_text = get_book_text("./books/frankenstein.txt")
     
     print(f"{count_words(frankenstein_text)} words found in the document")
+    print(count_characters(frankenstein_text))
 
 main()
