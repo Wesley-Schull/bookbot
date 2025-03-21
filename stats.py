@@ -13,3 +13,18 @@ def count_characters(input_text):
         char_count_dict[char] += 1
 
     return char_count_dict
+
+def sort_by_count(dict):
+    return dict["count"]
+
+def sort_characters(char_dict):
+    alphabetic_chars_list = []
+
+    for key in char_dict:
+        if key.isalpha():
+            alphabetic_chars_list.append({"char": key, "count": char_dict[key]})
+
+    # print(alphabetic_chars_list)
+    alphabetic_chars_list.sort(reverse=True, key=sort_by_count)
+    # print(alphabetic_chars_list)
+    return alphabetic_chars_list
