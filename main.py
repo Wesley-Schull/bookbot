@@ -1,7 +1,8 @@
 # BookBot, the first of the Boot.Dev projects!
 
-from stats import count_words, count_characters, sort_characters
-from sys import *
+from stats import * # importing everything from the stats.py file
+from sys import argv # only importing argv, since that's all we're using here
+
 
 
 def get_book_text(file_path):
@@ -21,20 +22,18 @@ def main():
     except Exception as e:
         print(f"Error caught: {e}")
     
+    # Take second argument (argv[1]) as input to get the book's filepath
     path_to_book = argv[1]
+    
+    # Generate data to input for the report
     book_text = get_book_text(path_to_book)
     word_count = count_words(book_text)
-    
-    
-    print("============ BOOKBOT ============")
-    print(f"Analyzing book found at {path_to_book}...")
-    print("----------- Word Count ----------")
-    print(f"Found {word_count} total words")
-    print("--------- Character Count -------")
     character_count_list = sort_characters(count_characters(book_text))
-    for char_dict in character_count_list:
-        print(f"{char_dict["char"]}: {char_dict["count"]}")
-    print("============= END ===============")
+
+    # Print a report to the console using our data
+    print_report(path_to_book, word_count, character_count_list)
+    
+    
 
 
 main()

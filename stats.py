@@ -27,5 +27,16 @@ def sort_characters(char_dict):
             alphabetic_chars_list.append({"char": key, "count": char_dict[key]})
     
     alphabetic_chars_list.sort(reverse=True, key=sort_by_count)
-    
+
     return alphabetic_chars_list #.sort(reverse=True, key=sort_by_count)
+
+def print_report(book_file_path, word_count, list_of_char_counts):
+    
+    print("============ BOOKBOT ============")
+    print(f"Analyzing book found at {book_file_path}...")
+    print("----------- Word Count ----------")
+    print(f"Found {word_count} total words")
+    print("--------- Character Count -------")
+    for char_dict in list_of_char_counts:
+        print(f"{char_dict["char"]}: {char_dict["count"]}")
+    print("============= END ===============")
