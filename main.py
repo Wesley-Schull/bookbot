@@ -4,7 +4,6 @@ from stats import * # importing everything from the stats.py file
 from sys import argv # only importing argv, since that's all we're using here
 
 
-
 def get_book_text(file_path):
     file_text = "No file found."
     
@@ -33,7 +32,4 @@ def main():
     # Print a report to the console using our data
     print_report(path_to_book, word_count, character_count_list)
     
-    
-
-
 main()

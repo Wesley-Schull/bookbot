@@ -30,6 +30,7 @@ def sort_characters(char_dict):
 
     return alphabetic_chars_list #.sort(reverse=True, key=sort_by_count)
 
+
 def print_report(book_file_path, word_count, list_of_char_counts):
     
     print("============ BOOKBOT ============")
